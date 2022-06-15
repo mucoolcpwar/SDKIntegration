@@ -1,0 +1,6 @@
+framework module Pods_SDKIntegrationTest {
+  umbrella header "Pods-SDKIntegrationTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

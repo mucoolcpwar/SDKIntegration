@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Hello, world!</title>
+   </head>
+   <body>
+      <h1>Hello, world!</h1>
+      <p id="demo">My web page.</p>
+      <button onclick="myFunction()">Click me</button>
+      <script type="text/javascript">
+         var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+         // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+         clevertap.account.push({"id": "TEST-WR5-977-456Z"});
+         clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+         clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+         (function () {
+             var wzrk = document.createElement('script');
+             wzrk.type = 'text/javascript';
+             wzrk.async = true;
+             wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
+             var s = document.getElementsByTagName('script')[0];
+             s.parentNode.insertBefore(wzrk, s);
+         })();
+         
+          
+          function myFunction() {
+           document.getElementById("demo").innerHTML = "Product Viewed";
+           // event with properties
+           clevertap.event.push("Product viewed", {
+               "Product ID": 1,
+               "Product Image":"https://d35fo82fjcw0y8.cloudfront.net/2018/07/26020307/customer-success-clevertap.jpg",
+               "Product Name":"CleverTap",
+               "Date":new Date(),
+           });
+           
+           clevertap.onUserLogin.push({
+            "Site": {
+              "Email": "jidesh+mukul@clevertap.com",         // Email address of the user
+            }
+           });
+          }
+      </script>
+   </body>
+</html>
